@@ -1,0 +1,17 @@
+<form (ngSubmit)="register(newsletterForm, $event)" #newsletterForm="ngForm" novalidate>
+    <div>
+        <label for="contactname" >name</label>
+        <input type="text" id="contactname" name'contactname' />
+    </div>
+    <div>
+        <label for="contactemail">emial</label>
+        <input type="text" id="contactemail" name="contactemail" />
+    </div>
+    <div>
+        <label for="newstype">newstype</label>
+        <select [(ngModel)]="model.newstype" name="newstype">
+            <option *ngFor="let item of newstypes" [value]="item">{{item}}</option>
+        </select>
+    </div>
+    <button type="submit">submit</button>
+</form>

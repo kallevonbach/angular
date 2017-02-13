@@ -1,0 +1,5 @@
+        <div class="recipe" *ngFor="let recipe of recipes" [class.featured]="recipe.isfeatured">
+        <h2>{{recipe.name}}</h2>
+        <p>{{recipe.description}}</p>
+        <p>{{recipe.estimatedcost | currency:'USD':true}}
+        </div>

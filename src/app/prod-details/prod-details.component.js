@@ -9,18 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+var router_1 = require('@angular/router');
+var ProdDetailsComponent = (function () {
+    function ProdDetailsComponent(_route, router) {
+        this._route = _route;
+        this.router = router;
     }
-    AppComponent = __decorate([
+    ProdDetailsComponent.prototype.ngOnInit = function () {
+        this.productid = +this._route.snapshot.params['id'];
+    };
+    ProdDetailsComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n    <page-header></page-header>\n    <router-outlet></router-outlet>\n    <page-footer></page-footer>\n  ",
+            selector: 'prod-details',
+            templateUrl: './app/prod-details/prod-details.component.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
+    ], ProdDetailsComponent);
+    return ProdDetailsComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ProdDetailsComponent = ProdDetailsComponent;
+//# sourceMappingURL=prod-details.component.js.map
