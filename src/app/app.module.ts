@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent }  from './app.component';
@@ -10,12 +11,15 @@ import { ProdDetailsComponent} from './prod-details/prod-details.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { PageFooterComponent} from './page-footer/page-footer.component';
 
+import { DemoDataService } from './shared/demodata.service'
+
 @NgModule({
   imports:      [ 
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'home', component: FrontpageComponent },
-      { path: 'productdetail/:id', component: ProdDetailsComponent },
+      { path: 'productdetail/:productid', component: ProdDetailsComponent },
       { path: 'contact', component: ContactComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
@@ -30,9 +34,10 @@ import { PageFooterComponent} from './page-footer/page-footer.component';
   FrontpageComponent,
   ProdDetailsComponent,  
   PageFooterComponent
-  
   ],
-  
+
+  providers:  [ DemoDataService ],
+
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

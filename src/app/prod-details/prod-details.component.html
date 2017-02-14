@@ -1,25 +1,25 @@
-<section class="details-con">
+<section *ngIf="product" class="details-con">
       <div class="gallery-con">  
         <div class="productimg">
-            <img src="img/shoe-big.jpg" alt="product image">
+            <img src="{{product.image[3]}}" alt="product image">
         </div>
             <div class="thumbs">
                 <div class="product-1">
-                    <img src="img/shoe-1.jpg" alt="preview of product image">
+                    <img src="{{product.image[0]}}" alt="preview of product image">
                 </div>
                 <div class="product-2">
-                    <img src="img/shoe-2.jpg" alt="preview of product image">
+                    <img src="{{product.image[1]}}" alt="preview of product image">
                 </div>
                 <div class="product-3">
-                    <img src="img/shoe-3.jpg" alt="preview of product image">
+                    <img src="{{product.image[2]}}" alt="preview of product image">
                 </div>
             </div>
         </div>
 		<div class="details">
-			<h1>Gel-Fujitrabuco 5 G-Tx</h1>
+			<h1>{{product.name}}</h1>
 			<div class="logoprice">
-				<img src="img/brand-logo.jpg" alt="asics brand logo">
-				<p>kr 947.90</p>
+				<img src="{{product.logo}}" alt="asics brand logo">
+				<p>{{product.price | currency:'DKK':false}}</p>
 			</div>
 			<div class="save">
 				<p>kr. 1115.24</p>
@@ -30,10 +30,10 @@
 					<div class="bottom-inpl">
 						<label for="">Size</label>
 						<select>
-							<option value="">EU 45 White</option>
-							<option selected value="">EU 45 Black</option>
-							<option value="">EU 46 Black</option>
-							<option value="">EU 46 White</option>
+							<option value="">{{product.sizes[0]}}</option>
+							<option selected value="">{{product.sizes[1]}}</option>
+							<option value="">{{product.sizes[2]}}</option>
+							<option value="">{{product.sizes[3]}}</option>
 						</select>
 					</div>
 					<div class="bottom-inpr">

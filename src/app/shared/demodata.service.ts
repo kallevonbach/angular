@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
-//import { RECIPEDATA } from './data';
-import { IRecipe } from '../recipe/recipe';
+import { PRODUCTSDATA } from './demo-data';
+import { Iproduct } from './product';
 
-/*@Injectable()
+@Injectable()
 export class DemoDataService{
-    getDemoData() {
-        return RECIPEDATA;
+    getDemoData() :Iproduct[] {
+        return PRODUCTSDATA;
     }
-}*/
+
+    getDemoDataById(id: number) {
+        return PRODUCTSDATA.find(product => product.id == id);
+  }
+
+}

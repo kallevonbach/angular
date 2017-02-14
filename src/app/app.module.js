@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
 var app_component_1 = require('./app.component');
 var page_header_component_1 = require('./page-header/page-header.component');
@@ -18,6 +19,7 @@ var products_list_component_1 = require('./prod-details/products-list.component'
 var prod_details_component_1 = require('./prod-details/prod-details.component');
 var frontpage_component_1 = require('./frontpage/frontpage.component');
 var page_footer_component_1 = require('./page-footer/page-footer.component');
+var demodata_service_1 = require('./shared/demodata.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,9 +27,10 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
                 router_1.RouterModule.forRoot([
                     { path: 'home', component: frontpage_component_1.FrontpageComponent },
-                    { path: 'productdetail/:id', component: prod_details_component_1.ProdDetailsComponent },
+                    { path: 'productdetail/:productid', component: prod_details_component_1.ProdDetailsComponent },
                     { path: 'contact', component: contact_component_1.ContactComponent },
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
                     { path: '**', redirectTo: 'home', pathMatch: 'full' }
@@ -42,6 +45,7 @@ var AppModule = (function () {
                 prod_details_component_1.ProdDetailsComponent,
                 page_footer_component_1.PageFooterComponent
             ],
+            providers: [demodata_service_1.DemoDataService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

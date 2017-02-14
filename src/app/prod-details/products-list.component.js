@@ -9,12 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var demo_data_1 = require('../shared/demo-data');
+var demodata_service_1 = require('../shared/demodata.service');
 var ProductListComponent = (function () {
-    function ProductListComponent() {
+    function ProductListComponent(demoDataService) {
+        this.demoDataService = demoDataService;
     }
     ProductListComponent.prototype.ngOnInit = function () {
-        this.products = demo_data_1.PRODUCTSDATA;
+        this.products = this.demoDataService.getDemoData();
     };
     ProductListComponent = __decorate([
         core_1.Component({
@@ -22,7 +23,7 @@ var ProductListComponent = (function () {
             moduleId: module.id,
             templateUrl: "products-list.component.html"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [demodata_service_1.DemoDataService])
     ], ProductListComponent);
     return ProductListComponent;
 }());

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Iproduct } from '../shared/product';
-import { PRODUCTSDATA } from '../shared/demo-data';
+import { DemoDataService } from '../shared/demodata.service';
 
 @Component({
     selector: "products-list",
@@ -10,7 +10,9 @@ import { PRODUCTSDATA } from '../shared/demo-data';
 export class ProductListComponent implements OnInit{
     products: Iproduct[];
 
+    constructor(private demoDataService: DemoDataService) {}
+    
     ngOnInit() {
-        this.products = PRODUCTSDATA;
+        this.products = this.demoDataService.getDemoData();
     }
 }

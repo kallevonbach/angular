@@ -4,7 +4,11 @@
                 <div class="inner">
                 <div class="prod-border">
                         <div class="prod-img">
-                        <p class="stars">{{product.starrating}}</p>
+                        <p class="stars" *ngIf="product.starrating == 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+                        <p class="stars" *ngIf="product.starrating == 4"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+                        <p class="stars" *ngIf="product.starrating == 3"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+                        <p class="stars" *ngIf="product.starrating == 2"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+                        <p class="stars" *ngIf="product.starrating == 1"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
                         <a [routerLink]="['/productdetail', product.id]"><img src="{{product.previewimg}}" alt="product image"></a>
                         </div>
                     <div class="desc-con">

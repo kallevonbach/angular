@@ -9,5 +9,4 @@ export interface Iproduct {
     price: number,
     logo: string,
     sizes: Array<string>,
-    save: number,
 }

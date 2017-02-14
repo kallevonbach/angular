@@ -10,20 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var demodata_service_1 = require('../shared/demodata.service');
 var ProdDetailsComponent = (function () {
-    function ProdDetailsComponent(_route, router) {
+    function ProdDetailsComponent(_route, demoDataService) {
         this._route = _route;
-        this.router = router;
+        this.demoDataService = demoDataService;
     }
     ProdDetailsComponent.prototype.ngOnInit = function () {
-        this.productid = +this._route.snapshot.params['id'];
+        var productid = this._route.snapshot.params['productid'];
+        this.product = this.demoDataService.getDemoDataById(productid);
     };
     ProdDetailsComponent = __decorate([
         core_1.Component({
             selector: 'prod-details',
             templateUrl: './app/prod-details/prod-details.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, demodata_service_1.DemoDataService])
     ], ProdDetailsComponent);
     return ProdDetailsComponent;
 }());
