@@ -9,13 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var MessageForm = (function () {
+    function MessageForm() {
+    }
+    return MessageForm;
+}());
 var ContactComponent = (function () {
     function ContactComponent() {
+        this.model = new MessageForm();
     }
+    ContactComponent.prototype.ngOnInit = function () {
+        this.submitted = false;
+    };
+    ContactComponent.prototype.send = function (form, event) {
+        event.preventDefault();
+        this.submitted = true;
+    };
     ContactComponent = __decorate([
         core_1.Component({
             selector: 'contact',
-            templateUrl: './app/contact/contact.component.html'
+            templateUrl: './app/contact/contact.component.html',
         }), 
         __metadata('design:paramtypes', [])
     ], ContactComponent);

@@ -6,7 +6,7 @@
         <ul class="con-shop">
             <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+45 22660077">+45 22660077</a></li>
             <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:hello@ipsum.com">hello@ipsum.com</a></li>
-            <li><i class="fa fa-shopping-cart" aria-hidden="true"></i>$ 99.54<span><a>checkout</a></span>
+            <li><i class="fa fa-shopping-cart" aria-hidden="true"></i>$ 99.54<span><a [routerLink]="['']">checkout</a></span>
             </li>
         </ul>
     </div>
@@ -15,18 +15,18 @@
             <li class="dropdown">
             <a class="dropbtn" [routerLink]="['home']">home</a>
                 <div class="dropdown-content">
-                    <a>Shoes</a>
-                    <a>Shirts</a>
-                    <a>hats</a>
-                    <a>jackets</a>
-                    <a>flip-floppers</a>
+                    <a [routerLink]="['']">Shoes</a>
+                    <a [routerLink]="['']">Shirts</a>
+                    <a [routerLink]="['']">hats</a>
+                    <a [routerLink]="['']">jackets</a>
+                    <a [routerLink]="['']">flip-floppers</a>
                 </div>
             </li>
-            <li><a>men</a></li>
-            <li><a>women</a></li>
-            <li><a>kids</a></li>
-            <li><a>sale</a></li>
-            <li><a>about us</a></li>
+            <li><a [routerLink]="['']">men</a></li>
+            <li><a [routerLink]="['']">women</a></li>
+            <li><a [routerLink]="['']">kids</a></li>
+            <li><a [routerLink]="['']">sale</a></li>
+            <li><a [routerLink]="['']">about us</a></li>
             <li><a [routerLink]="['contact']">support</a></li>
             <li id="search-main"><i class="fa fa-search" aria-hidden="true"></i><input type="search" placeholder="Search.."></li>
         </ul>
