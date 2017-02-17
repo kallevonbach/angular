@@ -1,0 +1,19 @@
+    <div class="contact-con" [hidden]="submitted">
+        <h1>Contact us</h1>
+        <form (ngSubmit)="send(messageFormForm, $event)" #messageFormForm="ngForm" novalidate>
+        <div>
+            <label for="contactname">Name:</label> 
+            <input type="text" placeholder="your Name..." id="contactname" name="contactname" [(ngModel)]="model.contactname" />
+        </div>
+        <div>
+            <label for="">Email:</label>
+            <input type="email" placeholder="your@email.com" id="contactemail" name="contactemail" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" required [(ngModel)]="model.contactemail" />
+        </div>
+            <label for="">Message:</label>
+            <textarea placeholder="your text..." id="contactmessage" rows="5" cols="50" name="contactmessage" [(ngModel)]="model.contactmessage" required></textarea>
+        <button type="submit" [disabled]="!messageFormForm.valid">Send message</button>
+    </form>
+    </div>
+    <div [hidden]="!submitted">well done {{model.contactname}}!</div>
+    <div [hidden]="!submitted"><br>You have submitted this Email and message<br><br>Email: {{model.contactemail}}<br><br>Message: {{model.contactmessage}}</div>
+    

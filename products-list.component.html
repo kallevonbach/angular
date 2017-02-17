@@ -1,0 +1,31 @@
+<div class="container">
+        <div class="row">
+            <div  *ngFor="let product of products" class="col-xs-12 col-md-3 product">
+                <div class="inner">
+                <div class="prod-border">
+                        <div class="prod-img">
+                        <p class="stars" *ngIf="product.starrating == 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+                        <p class="stars" *ngIf="product.starrating == 4"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+                        <p class="stars" *ngIf="product.starrating == 3"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+                        <p class="stars" *ngIf="product.starrating == 2"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+                        <p class="stars" *ngIf="product.starrating == 1"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+                        <a [routerLink]="['/productdetail', product.id]"><img src="{{product.previewimg}}" alt="product image"></a>
+                        </div>
+                    <div class="desc-con">
+                        <div class="prod-desc">
+                            <h3><a [routerLink]="['/productdetail', product.id]">{{product.name}}</a></h3>
+                            <h4><a [routerLink]="['/productdetail', product.id]">{{product.type}}</a></h4>
+                            <p><a [routerLink]="['/productdetail', product.id]">{{product.description}}</a></p>
+                        </div>
+                        <div class="price-icons">
+                            <p>{{product.price | currency:'USD':true}}</p>
+                            <a [routerLink]="['']"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                            <a [routerLink]="['']"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <button [routerLink]="['/productdetail', product.id]" class="buy-grid">buy now</button>
+                </div>
+            </div>
+        </div>
+    </div>
