@@ -1,5 +1,5 @@
 # Om projectet
-Dette er Angular 2 delen af Modern frontend eksamen. jQuery elementerne er ikke en del af denne side, da de skabte problemer og talte i bedømmelsen. 
+Dette er Angular 2 delen af Modern frontend eksamen. jQuery elementerne er ikke en del af denne side, da de skabte problemer og ikke talte med i bedømmelsen. 
 De kan ses i HTML/SASS delen af projectet.
 Koden kan ses live her: http://angular.casperbach.dk/
 
