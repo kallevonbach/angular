@@ -1,3 +1,8 @@
+# Om projectet
+Dette er Angular 2 delen af Modern frontend eksamen. jQuery elementerne er ikke en del af denne side, da de skabte problemer og talte i bedømmelsen. 
+De kan ses i HTML/SASS delen af projectet.
+Koden kan ses live her: http://angular.casperbach.dk/
+
 # Angular QuickStart Source
 [![Build Status][travis-badge]][travis-badge-url]
 
@@ -65,9 +70,9 @@ by entering the following commands while in the project folder:
 
 ##### OS/X (bash)
 ```shell
-xargs rm -rf < non-essential-files.osx.txt
-rm src/app/*.spec*.ts
-rm non-essential-files.osx.txt
+xargs -a non-essential-files.txt rm -rf
+rm app/*.spec*.ts
+rm non-essential-files.txt
 ```
 
 ##### Windows
